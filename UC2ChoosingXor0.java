@@ -32,15 +32,7 @@ public class UC2ChoosingXor0 {
 			
 			System.out.println();
 
-			// UC2 Determine Player and Computer Letter to play the game
-			int PlayFirst = (int) (Math.random() * 10) % 1;
-			if (PlayFirst == 0) {
-				System.out.println("Player Win the toss");
-				System.out.println("Press 1-9");
-				//int Player = sc.nextInt();
-			} else {
-				System.out.println("Computer Win the toss");
-			}
+			
 		}
 		
 		public static void main(String[] args) {
