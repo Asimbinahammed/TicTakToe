@@ -81,13 +81,36 @@ public class TicTacToeGame {
 	//main method
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe Game");
+		  TicTacToeGame game = new TicTacToeGame();
+  
+		int check =(int)Math.floor(Math.random()*10)%2+1;
+		  if(check==1) {
+			  int symbol =(int)Math.floor(Math.random()*10)%2+1;
+			  if(symbol==1) {
+				  System.out.println("computer chooses X");
+				  cpuCharactor='X';
+				  playerCharactor='O';
+			  }
+			  else {
+				  System.out.println("computer chooses O");	
+				  cpuCharactor='O';
+				  playerCharactor='X';
 
-		TicTacToeGame game = new TicTacToeGame();
-		game.userInput();
-		System.out.println("player is -" + playerCharactor + " computer is - " + cpuCharactor);
+			  }
+				System.out.println("player is -" + playerCharactor + " computer is - " + cpuCharactor);
+				game.showBoard();
+				game.userMoveLocation();
+			  
+		  }
+		  else {
+			  
+				game.userInput();
+				System.out.println("player is -" + playerCharactor + " computer is - " + cpuCharactor);
 
-		game.showBoard();
-		game.userMoveLocation();
+				game.showBoard();
+				game.userMoveLocation();
+		  }
+		
 
 	}
 }
