@@ -44,6 +44,28 @@ public class TicTacToeGame {
 
 	}
 	
+	//UC4 move to desired location
+		public void userMoveLocation() {
+			System.out.println("Enter the index from 1 to 9");
+				Scanner input = new Scanner(System.in);
+				int userIndex = input.nextInt();
+				if (userIndex >= 10 || userIndex <= 0) {
+					System.out.println("Enter a valid index number");
+					userMoveLocation();
+				}
+				else {
+					if ( board[userIndex]  != ' ') {
+						System.out.println("It is already filled, enter a correct index");
+						userMoveLocation();
+					}
+					else {
+						System.out.println("Free space");
+						//redirect to adding element to board
+					}
+				}
+			}
+		
+	
 	//main method
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicTacToe Game");
@@ -53,6 +75,7 @@ public class TicTacToeGame {
 		System.out.println("player is -" + playerCharactor + " computer is - " + cpuCharactor);
 
 		game.showBoard();
+		game.userMoveLocation();
 
 	}
 }
