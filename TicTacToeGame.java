@@ -56,14 +56,26 @@ public class TicTacToeGame {
 				else {
 					if ( board[userIndex]  != ' ') {
 						System.out.println("It is already filled, enter a correct index");
-						userMoveLocation();
+						userMoveLocation(); //Loop until finds a free space
 					}
 					else {
 						System.out.println("Free space");
 						//redirect to adding element to board
+						moveLocation(userIndex);
 					}
 				}
 			}
+		
+		//UC5 move desired location
+		public void moveLocation(int userIndex) {
+			board[userIndex]=playerCharactor;
+			showBoard();
+			for(int i = 1 ; i < 10 ; i++) {
+				if ( board[i] == ' ') {
+					userMoveLocation();
+				}
+			}
+		}
 		
 	
 	//main method
